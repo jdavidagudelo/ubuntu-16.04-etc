@@ -1,0 +1,1 @@
+deb [arch=amd64 trusted=yes] http://downloads.scylladb.com/deb/3rdparty/xenial xenial scylladb/multiverse

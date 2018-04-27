@@ -1,0 +1,5 @@
+# scylla home dir
+SCYLLA_HOME=/var/lib/scylla
+
+# scylla config dir
+SCYLLA_CONF=/etc/scylla

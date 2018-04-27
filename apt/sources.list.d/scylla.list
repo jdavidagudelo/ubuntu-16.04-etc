@@ -1,0 +1,2 @@
+deb [arch=amd64] https://repositories.scylladb.com/scylla/downloads/scylladb/63074dd55d7ebbd35bedc10c3d4ad5af/scylla/deb/ubuntu/scylladb-2.1 xenial multiverse
+deb http://ppa.launchpad.net/scylladb/ppa/ubuntu xenial main

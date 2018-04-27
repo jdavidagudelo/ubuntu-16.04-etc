@@ -1,0 +1,26 @@
+TARGETS = rsyslog virtualbox ubuntu-fan rabbitmq-server uuidd zookeeper killprocs apport apache2 single irqbalance cgroupfs-mount carbon-cache collectd postgresql dbus redis-server thermald ntp whoopsie cron rsync sysstat anacron haproxy docker lightdm bluetooth plymouth ondemand rc.local grub-common
+INTERACTIVE = apache2
+apache2: rsyslog
+single: killprocs
+irqbalance: rsyslog
+cgroupfs-mount: rsyslog
+carbon-cache: rsyslog
+collectd: rsyslog
+postgresql: rsyslog
+dbus: rsyslog
+redis-server: rsyslog
+thermald: rsyslog
+ntp: rsyslog
+whoopsie: rsyslog
+cron: rsyslog
+rsync: rsyslog
+sysstat: rsyslog
+anacron: rsyslog
+haproxy: rsyslog
+docker: rsyslog cgroupfs-mount
+lightdm: dbus
+bluetooth: rsyslog dbus
+plymouth: irqbalance rsyslog docker cgroupfs-mount virtualbox carbon-cache collectd apache2 postgresql ubuntu-fan lightdm dbus bluetooth rabbitmq-server uuidd redis-server zookeeper thermald ntp whoopsie cron apport rsync sysstat anacron haproxy
+ondemand: irqbalance rsyslog docker cgroupfs-mount virtualbox carbon-cache collectd apache2 postgresql ubuntu-fan lightdm dbus bluetooth rabbitmq-server uuidd redis-server zookeeper thermald ntp whoopsie cron apport rsync sysstat anacron haproxy
+rc.local: irqbalance rsyslog docker cgroupfs-mount virtualbox carbon-cache collectd apache2 postgresql ubuntu-fan lightdm dbus bluetooth rabbitmq-server uuidd redis-server zookeeper thermald ntp whoopsie cron apport rsync sysstat anacron haproxy
+grub-common: irqbalance rsyslog docker cgroupfs-mount virtualbox carbon-cache collectd apache2 postgresql ubuntu-fan lightdm dbus bluetooth rabbitmq-server uuidd redis-server zookeeper thermald ntp whoopsie cron apport rsync sysstat anacron haproxy

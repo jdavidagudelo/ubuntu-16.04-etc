@@ -1,0 +1,11 @@
+TARGETS = apache-htcacheclean virtualbox ubuntu-fan rabbitmq-server uuidd zookeeper resolvconf apache2 alsa-utils ufw irqbalance carbon-cache collectd postgresql redis-server thermald ntp whoopsie haproxy docker lightdm bluetooth plymouth urandom cgroupfs-mount sendsigs rsyslog umountnfs.sh hwclock.sh networking umountfs umountroot halt reboot
+cgroupfs-mount: docker
+sendsigs: irqbalance docker cgroupfs-mount plymouth virtualbox carbon-cache collectd apache2 postgresql ubuntu-fan alsa-utils lightdm apache-htcacheclean bluetooth rabbitmq-server uuidd redis-server zookeeper thermald haproxy
+rsyslog: irqbalance docker cgroupfs-mount carbon-cache collectd apache2 postgresql apache-htcacheclean bluetooth sendsigs redis-server thermald ntp whoopsie haproxy
+umountnfs.sh: irqbalance docker cgroupfs-mount plymouth virtualbox carbon-cache collectd apache2 postgresql ubuntu-fan alsa-utils lightdm apache-htcacheclean bluetooth rabbitmq-server sendsigs rsyslog uuidd redis-server zookeeper thermald haproxy
+hwclock.sh: postgresql rsyslog uuidd
+networking: carbon-cache collectd apache2 postgresql ubuntu-fan lightdm rabbitmq-server umountnfs.sh haproxy
+umountfs: irqbalance docker cgroupfs-mount plymouth resolvconf virtualbox hwclock.sh carbon-cache collectd apache2 networking postgresql ubuntu-fan alsa-utils lightdm apache-htcacheclean bluetooth rabbitmq-server urandom umountnfs.sh uuidd redis-server zookeeper thermald haproxy
+umountroot: umountfs
+halt: umountroot
+reboot: umountroot
